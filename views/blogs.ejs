@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <%- include('layouts/header') -%>
+<body>
+  <%- include('layouts/navbar') -%>
+
+  <div class="container-main card p-5">
+    <h1 class="display-4 mt-4">Posts Page</h1>
+  
+    <div class="">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+          <% for (var i=0; i < blogposts.length; i++){ %>
+            <div class="post-preview p-3 mb-3">
+              <a href="/post/<%= blogposts[i]._id %>">
+                <h2>
+                  <%= blogposts[i].title %>
+                </h2>
+              </a>
+              <h4>
+                <%= blogposts[i].body %>
+              </h4>
+            </div>
+            <hr>
+          <% } %>
+        </div>
+      </div>
+    </div>
+  
+  </div>
+  <%- include('layouts/footer') -%>
+</body>
+<!-- MDB -->
+<%- include('layouts/scripts') -%>
+</html>
