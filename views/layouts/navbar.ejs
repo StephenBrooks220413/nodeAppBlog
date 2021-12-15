@@ -22,17 +22,27 @@
           <li class="nav-item">
             <a class="nav-link" href="/blogs">Blogs</a>
           </li>
+          <% if(loggedIn){ %>
           <li class="nav-item">
             <a class="nav-link" href="/posts/new">Create</a>
           </li>
+          <% } %>
         </ul>
+        
         <span class="navbar-text">
-          <a href="">
+          <% if(!loggedIn){ %>
+          <a href="/auth/register">
+            Register
+          </a>
+          <a href="/auth/login">
             <i class="fas p-1 fa-key"></i>
           </a>
-          <a href="">
+          <% } %>
+          <% if(loggedIn){ %>
+          <a href="/auth/logout">
             <i class="fas p-1 fa-sign-out-alt"></i>
           </a>
+          <% } %>
         </span>
       </div>
     </div>

@@ -19,23 +19,19 @@
             <div class="row">
               <div class="col-md mt-3 mx-auto">
                   <h1 class="display-4">
-                      <%= blogpost.title %>
+                      <%= User.username %>
                   </h1>
                   <h3>
-                      <%- blogpost.body %> 
+                      about user text
                   </h3>
                   <p class="mt-3 lead">
-                    Created By: <%= blogpost.username %> <br />
-                    On <%= blogpost.datePosted.toDateString() %> <br />
-                    <%= blogpost.email %>
+                    Created By: <%= User.email %> <br />
+                    
                 </p>
               </div>
                 <div class="col-md mt-3 mx-auto">
-                  <img src="<%= blogpost.image %>" class="img-fluid shadow-2-strong rounded" alt="blog image">
+                  <img src="<%= User.image %>" class="img-fluid shadow-2-strong rounded" alt="blog image">
                 </div>
-                <p class="card-footer">
-                  Posted By <a href="<%= blogpost.email %>"><%= blogpost.username %></a>
-                </p>
             </div>
         </article>
     </div>

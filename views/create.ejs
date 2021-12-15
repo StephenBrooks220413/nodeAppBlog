@@ -7,7 +7,7 @@
     <div class="container-main card p-5 mt-3 mb-5">
         <h1 class="display-4 mb-5">Create A Post</h1>
 
-      <form class="mt-3" action="/posts/store" method="POST">
+      <form class="mt-3" action="/posts/store" method="POST" enctype="multipart/form-data">
           <!-- Name input -->
           <div class="form-outline mb-4">
             <input type="text" required name="title" id="title" class="form-control" />
@@ -26,11 +26,25 @@
             <label class="form-label">UserName</label>
           </div>
 
+          <!-- image -->
+          <div class="form-outline mb-4">
+            Choose An Image
+            <input type="file" required name="image" id="image" class="form-control" />
+          </div>
+
           <!-- Message input -->
           <div class="form-outline mb-4">
-            <textarea class="form-control" spellcheck="true" max-length="315" required name="body" id="body" rows="4"></textarea>
-            <label class="form-label">Message</label>
+            <textarea class="form-control" spellcheck="true" max-length="315" required name="body" id="body"></textarea>
+   
           </div>
+
+          <script>
+            $('#body').summernote({
+              plaseholder: "Your message goes here",
+              tabsize: 2,
+              height: 200
+            });
+          </script>
         
           <!-- Submit button -->
           <button type="submit" class="btn btn-primary btn-block mb-4">Send</button>

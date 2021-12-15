@@ -18,8 +18,11 @@
                 </h2>
               </a>
               <h4>
-                <%= blogposts[i].body %>
+                <%- blogposts[i].body %>
               </h4>
+              <p class="card-footer">
+                Posted By <a href="/post/<%= blogposts[i]._id %>"><%= blogposts[i].username %></a>
+              </p>
             </div>
             <hr>
           <% } %>
